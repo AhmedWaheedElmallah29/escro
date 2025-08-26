@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function EscroScoreTracker() {
+export default function App() {
   // State
   const [playerName, setPlayerName] = useState("");
   const [players, setPlayers] = useState([]); // ["Ahmed", "Sara", ...]
@@ -17,7 +17,7 @@ export default function EscroScoreTracker() {
 
     setPlayers((prev) => {
       const next = [...prev, name];
-      // Also extend existing rounds with a new column (0) for this player
+
       setScores((old) => old.map((r) => [...r, 0]));
       return next;
     });
